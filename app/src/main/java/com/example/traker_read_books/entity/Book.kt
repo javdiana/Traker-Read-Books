@@ -1,12 +1,14 @@
 package com.example.traker_read_books.entity
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "book")
 data class Book(
-    val id: Long,
+    @PrimaryKey(autoGenerate = true)
+    val id: Int,
+
     val name: String,
     val author: String,
-    val language: Language,
-    val pages: Int,
-    val isReadBook: Boolean,
-    val timeToRead: Long,
-    val readingStates: List<ReadingState>
+    val pages: Int
 )
